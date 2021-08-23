@@ -1,5 +1,4 @@
 class Subscriber < ApplicationRecord
-  has_secure_password
   validates :first_name, :presence => true, :length => { minimum: 2 }
   validates_format_of :first_name, :with => /\A[^0-9`!@#\$%\^&*+_=]+\z/
 

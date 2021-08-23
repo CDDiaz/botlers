@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'subscribers/index'
   root :to => 'pages#home'
   resources :admins, only: [:index]
+  resources :subscribers, only: [:new, :create, :index]
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
