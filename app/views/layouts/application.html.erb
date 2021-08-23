@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Botlers</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div>
+      <nav>
+        <%= link_to "Home", root_path %>
+        <% if @current_admin.present? %>
+          <%= link_to "Logout", login_path, :method => 'delete' %>
+        <% else %>
+          <%= link_to "Log in", login_path %>
+        <% end %>
+      </nav>
+      <%= yield %>
+    </div>
+  </body>
+</html>
