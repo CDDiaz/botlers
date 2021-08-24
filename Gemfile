@@ -33,6 +33,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'pry-rails'
 gem 'kaminari'
+
+gem 'jquery-rails'
 gem 'bootstrap'
 
 group :development, :test do
