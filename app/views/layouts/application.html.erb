@@ -14,7 +14,7 @@
     <div>
       <%= render partial: "layouts/navbar" %>
       <nav>
-        <%= link_to "Home", root_path %>
+        <%# link_to "Home", root_path %>
         <% if @current_admin.present? %>
           <%= link_to "Logout", login_path, :method => 'delete' %>
         <% else %>
