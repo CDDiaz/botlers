@@ -102,3 +102,88 @@ th {
 //     color: $primary-color1;
 //   }
 // }
+// NAVBAR COLORS & SPACING
+
+.navbar {
+  background-color: #FFF !important
+}
+
+.navbar-nav .nav-link {
+  margin: 0 1.3rem;
+  color: #ED5744 !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #00000080 !important;
+}
+
+
+// Subscriptions  NEW & SHOW
+
+.btn.btn-default {
+  color: #fff;
+  background-color: #ED5744 !important;
+  width: 246px;
+  height: 40.19px;
+}
+
+.row.colbtm-bg {
+  background-color: #FFE5E2;
+  padding: 40px 0;
+}
+
+.row.colbtm-bg-1 {
+  background-color: #FFE5E2;
+  padding: 0px 0;
+}
+
+ .row.colbtm-bg-1 button {
+  color: #fff;
+  background-color: #ED5744 !important;
+  width: 246px;
+  height: 40.19px;
+  border: none;
+  margin-bottom: 30px;
+}
+
+.row.colbtm-bg-1 h3{
+  font-size: 25px;
+  color: #4A4A4A;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+ }
+
+a.take-home{
+  display: block;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #ED5744 !important;
+  margin-bottom: 30px;
+}
+
+a.take-home:hover{
+  text-decoration: underline;
+  color: #ED5744 !important;
+}
+
+.navbar li.nav-item {
+  border: none;
+}
+
+.navbar-nav a.session {
+  color: #4A4A4A !important;
+  // text-decoration: none;
+
+}
+
+.navbar-nav a.session:hover {
+  text-decoration: underline;
+  color: #4A4A4A !important;
+
+}
