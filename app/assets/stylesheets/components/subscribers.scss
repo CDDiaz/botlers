@@ -5,7 +5,7 @@
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
-  font-size: 44px;
+  font-size: #{'clamp(1.9375rem, 2.2vw, 2.75rem)'};
   line-height: 60px;
   letter-spacing: 0.04em;
 }
@@ -62,9 +62,19 @@ button {
 }
 
 table {
-  background: $table-bg;
+  background: #FFFFFF;
+}
+.container-sm {
+  background: #FFFFFF;
 }
 
+.subscriber-bg {
+  background: $accent-color1;
+}
+
+.subscribers-link > a {
+  color: $primary-color1;
+}
 .subscribers-link > a {
   color: $primary-color1;
 }

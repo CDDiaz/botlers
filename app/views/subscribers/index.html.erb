@@ -2,72 +2,73 @@
   <h1>Newsletter Analytics</h1>
 </div>
 
-
-<div class="container text-center d-flex justify-content-evenly p-4">
-  <div class="container-sm text-center border rounded">
-    <h2>New Subscribers Yesterday</h2>
-    <h3><%= @last_day_subs %></h3>
-  </div>
-  <div class="container-sm text-center border rounded">
-    <h2>Total Subscribers</h2>
-      <h3><%= @total_subs %></h3>
-  </div>
-  <div class="container-sm text-center border rounded">
-    <h2>Total Unsubscribes</h2>
-    <h3>1</h3>
-  </div>
-</div>
-<div class="container text-center">
-  <div>
-    <h2>Newsletter Sign-up Data</h2>
-    <%= form_tag(subscribers_path, method: :get) do %>
-    <%= text_field_tag(:search, params[:search], placeholder: "Search for keywords") %>
-    <%= submit_tag ("Search") %>
-    <% end %>
-    <table class="table table-borderless table-sm link-dark">
-      <thead>
-        <tr>
-          <th class="subscribers-link"><%= sortable "first_name", "Name" %></th>
-          <th class="subscribers-link"><%= sortable "email", "Email" %></th>
-          <th class="subscribers-link"><%= sortable "created_at", "Sign-up Date"%></th>
-          <th>Interests</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <%  @subscribers.each do |subscriber| %>
-          <tr>
-            <td><%= subscriber.first_name %> <%= subscriber.last_name %></td>
-            <td><%= subscriber.email  %></td>
-            <td><%= subscriber.created_at.strftime '%e/%m/%Y' %></td>
-            <td>
-              <% if subscriber.innovation? %>
-                <%= "Innovation"%>
-                <% if subscriber.botler_care? || subscriber.updates? || subscriber.special_deals? %>
-                  <%="|" %>
-                <% end %>
-              <% end %>
-              <% if subscriber.botler_care? %>
-                <%= "Botler Care"  %>
-                <% if subscriber.updates? || subscriber.special_deals? %> <%= "|" %><% end %>
-              <% end %>
-              <% if subscriber.updates? %>
-                <%= "Updates"  %>
-                <% if subscriber.special_deals? %> <%= "|" %><% end %>
-              <% end %>
-              <% if subscriber.special_deals? %>
-                <%= "Special Deals"  %>
-              <% end %>
-            </td>
-          </tr>
-        <% end %>
-
-      </tbody>
-    </table>
-    <div>
-      <%= paginate @subscribers %>
-      <%= page_entries_info @subscribers %>
+<div class="container subscriber-bg">
+  <div class="container d-flex flex-column flex-md-row text-center justify-content-evenly p-4">
+    <div class="container-sm text-center border rounded m-3">
+      <h2>New Subscribers Yesterday</h2>
+      <h3><%= @last_day_subs %></h3>
     </div>
+    <div class="container-sm text-center border rounded m-3">
+      <h2>Total Subscribers</h2>
+        <h3><%= @total_subs %></h3>
+    </div>
+    <div class="container-sm text-center border rounded m-3">
+      <h2>Total Unsubscribes</h2>
+      <h3>1</h3>
+    </div>
+  </div>
+  <div class="container text-center">
+    <div>
+      <h2>Newsletter Sign-up Data</h2>
+      <%= form_tag(subscribers_path, method: :get) do %>
+      <%= text_field_tag(:search, params[:search], placeholder: "Search for keywords") %>
+      <%= submit_tag ("Search") %>
+      <% end %>
+      <table class="table table-borderless table-sm link-dark">
+        <thead>
+          <tr>
+            <th class="subscribers-link"><%= sortable "first_name", "Name" %></th>
+            <th class="subscribers-link"><%= sortable "email", "Email" %></th>
+            <th class="subscribers-link"><%= sortable "created_at", "Sign-up Date"%></th>
+            <th>Interests</th>
+          </tr>
+        </thead>
 
+        <tbody>
+          <%  @subscribers.each do |subscriber| %>
+            <tr>
+              <td><%= subscriber.first_name %> <%= subscriber.last_name %></td>
+              <td><%= subscriber.email  %></td>
+              <td><%= subscriber.created_at.strftime '%e/%m/%Y' %></td>
+              <td>
+                <% if subscriber.innovation? %>
+                  <%= "Innovation"%>
+                  <% if subscriber.botler_care? || subscriber.updates? || subscriber.special_deals? %>
+                    <%="|" %>
+                  <% end %>
+                <% end %>
+                <% if subscriber.botler_care? %>
+                  <%= "Botler Care"  %>
+                  <% if subscriber.updates? || subscriber.special_deals? %> <%= "|" %><% end %>
+                <% end %>
+                <% if subscriber.updates? %>
+                  <%= "Updates"  %>
+                  <% if subscriber.special_deals? %> <%= "|" %><% end %>
+                <% end %>
+                <% if subscriber.special_deals? %>
+                  <%= "Special Deals"  %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+
+        </tbody>
+      </table>
+      <div>
+        <%= paginate @subscribers %>
+        <%= page_entries_info @subscribers %>
+      </div>
+
+    </div>
   </div>
 </div>
