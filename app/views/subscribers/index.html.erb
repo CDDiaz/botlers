@@ -5,25 +5,32 @@
 <div class="container subscriber-bg">
   <div class="container d-flex flex-column flex-md-row text-center justify-content-evenly p-4">
     <div class="container-sm text-center border rounded m-3">
-      <h2>New Subscribers Yesterday</h2>
+      <h4>New Subscribers Yesterday</h4>
       <h3><%= @last_day_subs %></h3>
     </div>
     <div class="container-sm text-center border rounded m-3">
-      <h2>Total Subscribers</h2>
-        <h3><%= @total_subs %></h3>
+      <h4>Total Subscribers</h4>
+      <h3><%= @total_subs %></h3>
     </div>
     <div class="container-sm text-center border rounded m-3">
-      <h2>Total Unsubscribes</h2>
+      <h4>Total Unsubscribes</h4>
       <h3>1</h3>
     </div>
   </div>
   <div class="container text-center">
     <div>
-      <h2>Newsletter Sign-up Data</h2>
-      <%= form_tag(subscribers_path, method: :get) do %>
-      <%= text_field_tag(:search, params[:search], placeholder: "Search for keywords") %>
-      <%= submit_tag ("Search") %>
-      <% end %>
+      <div class="container d-flex flex-column flex-md-row text-center justify-content-between p-0 pb-2">
+        <div class="newsletter">
+          <h2>Newsletter Sign-up Data</h2>
+        </div>
+        <div class="search-box">
+          <%= form_tag(subscribers_path, method: :get) do %>
+          <%= text_field_tag(:search, params[:search], placeholder: "Search for keywords") %>
+          <%= submit_tag ("Search") %>
+          <% end %>
+        </div>
+      </div>
+
       <table class="table table-borderless table-sm link-dark">
         <thead>
           <tr>
