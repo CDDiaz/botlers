@@ -175,3 +175,15 @@ a.take-home:hover{
 .navbar li.nav-item {
   border: none;
 }
+
+.navbar-nav a.session {
+  color: #4A4A4A !important;
+  // text-decoration: none;
+
+}
+
+.navbar-nav a.session:hover {
+  text-decoration: underline;
+  color: #4A4A4A !important;
+
+}
