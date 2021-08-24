@@ -1,6 +1,29 @@
 
-<img src="http://www.fillmurray.com/200/300" alt="fill murray">
-<h3>Thanks for subscribing!</h3>
-<p>You just made my day!</p>
-<p>Find your 10% code in your welcome email</p>
-<%= link_to 'TAKE ME HOME', root_path %>
+
+<div class="row justify-content-center">
+  <div class="col center-block">
+    <%= image_tag("botlerlogo.png", width: "180px" , alt: "botlers logo", :class => 'center-block') %>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-8 text-center">
+    <h3>Thanks for subscribing!</h3>
+    <p>You just made my day!</p>
+    <p>Find your 10% code in your welcome email</p><br>
+    <%= link_to 'TAKE ME HOME', root_path, :class => "take-home" %>
+  </div>
+</div>
+
+<div class="row  colbtm-bg-1 justify-content-center">
+  <div class="col center-block">
+    <%= image_tag("quiz-bot.png", width: "180px" , alt: "botlers logo", :class => 'center-block') %>
+  </div>
+</div>
+<div class="row colbtm-bg-1 justify-content-center">
+  <div class="col-6 text-center">
+    <h3>Spoiled for choice!</h3>
+    <p>Take this quiz to see which bot could be your best bud.</p>
+    <%# link_to 'TAKE ME HOME', root_path, :class => "take-home" %>
+    <button>TAKE THE QUIZ</button>
+  </div>
+</div>

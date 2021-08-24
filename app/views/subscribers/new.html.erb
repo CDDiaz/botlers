@@ -1,45 +1,61 @@
-<h1>Sign Up </h1>
 
-<img src="http://www.fillmurray.com/200/200" alt="fill murray">
-<h3>Join the Botler newsletter.</h3>
-<p>Every month we send an editorial newsletter with the latest bot-tech, tips, on caring for your Botlers, upcoming products and special deals.<strong>Subscribe now and get 10% off your next purchase!</strong></p><br>
 
-<% if @subscriber.errors.any? %>
-  <ol>
-    <% @subscriber.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+<div class="row justify-content-center">
+  <div class="col center-block">
+    <%= image_tag("botlerlogo.png", width: "180px" , alt: "botlers logo", :class => 'center-block') %>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-8 text-center">
+    <h3>Join the Botler newsletter.</h3>
+    <p>Every month we send an editorial newsletter with the latest bot-tech, tips, on caring for your Botlers, upcoming products and special deals.<strong>Subscribe now and get 10% off your next purchase!</strong></p><br>
+  </div>
+</div>
+
+<div class="row  colbtm-bg justify-content-center">
+  <div class="col-5">
+    <% if @subscriber.errors.any? %>
+      <ol>
+        <% @subscriber.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ol>
     <% end %>
-  </ol>
-<% end %>
-<%= form_for @subscriber do |f|  %>
-  <%= f.label       :first_name,"First Name:" %>
-  <%= f.text_field :first_name, :required => true %>
+    <%= form_for @subscriber do |f|  %>
+      <div class="form-group">
+        <%= f.label       :first_name,"First Name:" %>
+        <%= f.text_field :first_name, :required => true, :class => 'form-control'  %>
+      </div>
+      <div class="form-group">
+        <%= f.label       :last_name,"Last Name:" %>
+        <%= f.text_field :last_name, :required => true, :class => 'form-control'  %>
+      </div>
+      <div class="form-group">
+        <%= f.label       :email,"Email: " %>
+        <%= f.email_field :email, :required => true, :class => 'form-control'  %>
+      </div>
 
-  <%= f.label       :last_name,"Last Name:" %>
-  <%= f.text_field :last_name, :required => true %>
+      <div class="form-check">
+        <%= f.check_box :innovation, :class => "form-check-input" %>
+        <%= f.label :innovation, "Innovation" %><br>
 
-  <%= f.label       :email,"Email: " %>
-  <%= f.email_field :email, :required => true %>
+        <%= f.check_box :botler_care, :class => "form-check-input" %>
+        <%= f.label :botler_care, "Botler care" %><br>
 
-  <div class="form-group form-check">
-    <%= f.check_box :innovation %>
-    <%= f.label :innovation, "Innovation" %>
+        <%= f.check_box :updates, :class => "form-check-input" %>
+        <%= f.label :updates, "Updates" %><br>
 
-    <%= f.check_box :botler_care %>
-    <%= f.label :botler_care, "Botler care" %>
+        <%= f.check_box :special_deals, :class => "form-check-input" %>
+        <%= f.label :special_deals, "Special deals" %><br>
 
-    <%= f.check_box :updates %>
-    <%= f.label :updates, "Updates" %>
+        <%= check_box :user, :terms_of_service, class: "form-check-input", required: true %>
+        <%= label :terms_of_service, class: "form-check-label" do %>
+          <span>I agree with the <%= link_to 'Privacy policy ', privacy_path %>*</span>
+        <% end %>
+      </div>
 
-    <%= f.check_box :special_deals %>
-    <%= f.label :special_deals, "Special deals" %>
-
-    <%= check_box :user, :terms_of_service, class: "form-check-input", required: true %>
-    <%= label :terms_of_service, class: "form-check-label" do %>
-      <span>I agree with the <%= link_to 'Privacy policy ', privacy_path %>*</span>
+      <p>Botler takes your privacy very seriously, we will not share your information and you can opt out anytime.</p>
+      <%= f.submit "SIGN ME UP!", class: "btn btn-default" %>
     <% end %>
   </div>
-
-  <%= f.submit "SIGN ME UP!" %>
-
-<% end %>
+</div>
