@@ -1,26 +1,4 @@
-// Place all the styles related to the Subscribers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-// Variables
-
-$primary-color1: #4A4A4A;
-$primary-color2: #ED5744;
-
-$accent-color1: #FFE9E6;
-$accent-color2: #D14966;
-$accent-color3: #31B7A9;
-$accent-color4: #F4A749;
-
-$error-color: #DA002E;
-
-$table-color:                 $primary-color1;
-$table-bg:                    $accent-color1;
-$table-accent-bg:             transparent;
-
-$headings-font-family:        null;
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import "./variables/variables.scss";
 
 @mixin h1Desktop {
   color: $primary-color2;
@@ -83,12 +61,10 @@ button {
   @include buttonDesktop
 }
 
+table {
+  background: $table-bg;
+}
 
-
-
-
-@import "_bootstrap-include.scss";
-
-a {
+.subscribers-link > a {
   color: $primary-color1;
 }

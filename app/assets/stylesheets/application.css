@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+@import "./vendors/_bootstrap-include.scss";
+@import "./variables/variables.scss";
+@import "./general/fonts.scss";
+@import "./components/subscribers.scss";
