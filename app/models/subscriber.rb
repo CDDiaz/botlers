@@ -10,4 +10,7 @@ class Subscriber < ApplicationRecord
 
   validates_acceptance_of :privacy_policy, :message => ' The privacy policy must be accepted'
 
+
+  
+
 end
