@@ -1,3 +1,94 @@
 // Place all the styles related to the Subscribers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Variables
+
+$primary-color1: #4A4A4A;
+$primary-color2: #ED5744;
+
+$accent-color1: #FFE9E6;
+$accent-color2: #D14966;
+$accent-color3: #31B7A9;
+$accent-color4: #F4A749;
+
+$error-color: #DA002E;
+
+$table-color:                 $primary-color1;
+$table-bg:                    $accent-color1;
+$table-accent-bg:             transparent;
+
+$headings-font-family:        null;
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@mixin h1Desktop {
+  color: $primary-color2;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 60px;
+  letter-spacing: 0.04em;
+}
+@mixin h2Desktop {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 41px;
+  letter-spacing: 0.04em;
+}
+@mixin h3Desktop {
+  color: $primary-color2;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 49px;
+  text-align: center;
+}
+@mixin p1Desktop {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+}
+@mixin buttonDesktop {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 26px;
+  letter-spacing: 0.04em;
+}
+body {
+}
+
+h1 {
+  @include h1Desktop
+}
+h2 {
+  @include h2Desktop
+}
+h3 {
+  @include h3Desktop
+}
+p {
+  @include p1Desktop
+}
+button {
+  @include buttonDesktop
+}
+
+
+
+
+
+@import "_bootstrap-include.scss";
+
+a {
+  color: $primary-color1;
+}
