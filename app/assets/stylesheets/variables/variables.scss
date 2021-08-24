@@ -5,11 +5,68 @@ $accent-color1: #FFE9E6;
 $accent-color2: #D14966;
 $accent-color3: #31B7A9;
 $accent-color4: #F4A749;
+$accent-color5: #FFF5F4;
 
 $error-color: #DA002E;
 
 
 
-$table-color:                 $primary-color1;
-$table-bg:                    $accent-color1;
-$table-accent-bg:             transparent;
+// $table-color:                 $primary-color1;
+// $table-bg:                    black;
+// $table-accent-bg:             transparent;
+// $table-cell-padding-y:        2rem;
+// $table-cell-padding-x:        2rem;
+// $table-cell-padding-y-sm:     .25rem;
+// $table-cell-padding-x-sm:     .25rem;
+
+@mixin h1Desktop {
+  color: $primary-color2;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: #{'clamp(1.9375rem, 3.1vw, 2.75rem)'};
+  line-height: 60px;
+  letter-spacing: 0.04em;
+}
+@mixin h2Desktop {
+  color: $primary-color1;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: #{'clamp(1.625rem, 2.1vw, 1.875rem)'};
+  line-height: 41px;
+  letter-spacing: 0.04em;
+}
+@mixin h3Desktop {
+  color: $primary-color2;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: #{'clamp(1.25rem, 2.5vw, 2.25rem)'};
+  line-height: 49px;
+  text-align: center;
+}
+@mixin h4Desktop {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: #{'clamp(1.25rem, 1.55vw, 1.375rem)'};
+  line-height: 41px;
+  letter-spacing: 0.04em;
+}
+@mixin p1Desktop {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+}
+@mixin buttonDesktop {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 26px;
+  letter-spacing: 0.04em;
+}

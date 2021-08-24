@@ -7,7 +7,7 @@ class SessionController < ApplicationController
     admin = Admin.find_by :email => params[:email]
     if admin.present? && admin.authenticate(params[:password])
       session[:admin_id] = admin.id
-      redirect_to root_path
+      redirect_to subscribers_path
     else
       redirect_to login_path # GET /login
     end

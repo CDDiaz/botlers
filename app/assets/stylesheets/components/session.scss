@@ -1,3 +1,43 @@
-// Place all the styles related to the Session controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./variables/variables.scss";
+
+body {
+  font-family: Open Sans;
+  color: $primary-color1;
+}
+.login-page {
+  text-align: center;
+}
+
+h1 {
+  @include h1Desktop
+}
+h2 {
+  @include h2Desktop
+}
+h3 {
+  @include h3Desktop
+}
+h4 {
+  @include h4Desktop
+}
+p {
+  @include p1Desktop
+}
+button {
+  @include buttonDesktop
+}
+
+.login-bg {
+  background: $accent-color1;
+  margin: 0;
+  max-width: 1440px !important;
+  padding: 4rem 4rem;
+  text-align: left;
+}
+.btn-primary {
+  background-color: $primary-color2 !important;
+  border-color: $primary-color2 !important;
+}
+.form-control {
+  max-width: 500px;
+}

@@ -1,3 +1,105 @@
-// Place all the styles related to the Pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "./variables/variables.scss";
+
+body {
+  font-family: Open Sans;
+  color: $primary-color1;
+}
+.home-page {
+  text-align: center;
+}
+
+h1 {
+  @include h1Desktop
+}
+h2 {
+  @include h2Desktop
+}
+h3 {
+  @include h3Desktop
+}
+h4 {
+  @include h4Desktop
+}
+p {
+  @include p1Desktop
+}
+button {
+  @include buttonDesktop
+}
+
+.intro {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 30px;
+  text-align: center;
+}
+#browse-red {
+  background-color: #D14966 !important;
+  border-color: #D14966 !important;
+}
+#browse-green {
+  background-color: #31B7A9 !important;
+  border-color: #31B7A9 !important;
+}
+#browse-yellow {
+  background-color: #F4A749 !important;
+  border-color: #F4A749 !important;
+}
+#browse-white {
+  background-color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+  color: $primary-color2;
+}
+.kitchen {
+  background: $accent-color1;
+  margin: 0;
+  max-width: 1440px !important;
+  padding: 3rem 4rem;
+}
+.cleaning {
+  background: $accent-color5;
+  margin: 0;
+  max-width: 1440px !important;
+  padding: 3rem 4rem;
+}
+.laundry {
+  background: $accent-color1;
+  margin: 0;
+  max-width: 1440px !important;
+  padding: 3rem 4rem;
+}
+.quiz {
+  margin: 0;
+  max-width: 1440px !important;
+  padding: 3rem 4rem;
+}
+.signup-newsletter {
+  background: $primary-color2;
+  margin: 0;
+  max-width: 1440px !important;
+  padding: 2rem 4rem 3rem 4rem;
+  color: #FFFFFF;
+}
+.white-h2 {
+  color: #FFFFFF;
+}
+strong {
+  font-weight: bold;
+}
+
+.footer-nav {
+  max-width: 1440px !important;
+  background: $primary-color1;
+}
+
+.nav-link {
+  @include p1Desktop
+  color: #FFFFFF;
+}
+
+.nav-item {
+    border: 1px solid #989898;
+    padding: 0.50rem 0;
+}

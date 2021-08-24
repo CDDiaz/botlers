@@ -1,19 +1,24 @@
-<h1>Log In</h1>
-
-<%= form_tag login_path do %>
-  <div class="form-group">
-    <%= label_tag :email %>
-    <%= email_field_tag :email, nil, :class => 'form-control' %>
+<div class="login-page">
+  <div class="container text-center mb-4">
+    <img class="news-logo" src="botlerlogo.png" alt="botler logo">
+    <h1>Log In</h1>
   </div>
 
+  <div class="container login-bg">
+    <%= form_tag login_path do %>
+      <div class="form-group">
+        <%= label_tag :email %>
+        <%= email_field_tag :email, nil, :class => 'form-control' %>
+      </div>
 
-  <div class="form-group">
-    <%= label_tag :password %>
-    <%= password_field_tag :password, nil, :class => 'form-control' %>
+      <div class="form-group">
+        <%= label_tag :password %>
+        <%= password_field_tag :password, nil, :class => 'form-control' %>
+      </div>
+
+      <div class="container text-center">
+        <%= submit_tag "LOG IN", :class => 'btn btn-primary px-5' %>
+      </div>
+    <% end %>
   </div>
-
-
-  <%= submit_tag "Log In", :class => 'btn btn-info' %>
-
-
-<% end %>
+</div>

@@ -5,15 +5,15 @@
 
 <div class="container subscriber-bg">
   <div class="container d-flex flex-column flex-md-row text-center justify-content-evenly p-0 pt-4 pb-5">
-    <div class="container-sm border-test border text-center m-3">
+    <div class="container-sm border-test border text-center m-3 p-0">
       <h4>New Subscribers Yesterday</h4>
       <h3><%= @last_day_subs %></h3>
     </div>
-    <div class="container-sm text-center border rounded m-3">
+    <div class="container-sm text-center border rounded m-3 p-0">
       <h4>Total Subscribers</h4>
       <h3><%= @total_subs %></h3>
     </div>
-    <div class="container-sm text-center border rounded m-3">
+    <div class="container-sm text-center border rounded m-3 p-0">
       <h4>Total Unsubscribes</h4>
       <h3>1</h3>
     </div>
@@ -32,23 +32,23 @@
         </div>
       </div>
 
-      <table class="table table-borderless table-sm link-dark">
-        <thead>
+      <table class="table-responsive table-borderless">
+        <thead class="newsletter-header">
           <tr>
-            <th class="subscribers-link"><%= sortable "first_name", "Name" %></th>
-            <th class="subscribers-link"><%= sortable "email", "Email" %></th>
-            <th class="subscribers-link"><%= sortable "created_at", "Sign-up Date"%></th>
-            <th>Interests</th>
+            <th scope="col" class="subscribers-link"><%= sortable "first_name", "Name" %></th>
+            <th scope="col" class="subscribers-link"><%= sortable "email", "Email" %></th>
+            <th scope="col" class="subscribers-link"><%= sortable "created_at", "Sign-up Date"%></th>
+            <th scope="col">Interests</th>
           </tr>
         </thead>
 
         <tbody>
           <%  @subscribers.each do |subscriber| %>
-            <tr>
-              <td><%= subscriber.first_name %> <%= subscriber.last_name %></td>
-              <td><%= subscriber.email  %></td>
-              <td><%= subscriber.created_at.strftime '%e/%m/%Y' %></td>
-              <td>
+            <tr class="newsletter-rows">
+              <td scope="row"><%= subscriber.first_name %> <%= subscriber.last_name %></td>
+              <td scope="row"><%= subscriber.email  %></td>
+              <td scope="row"><%= subscriber.created_at.strftime '%e/%m/%Y' %></td>
+              <td scope="row">
                 <% if subscriber.innovation? %>
                   <%= "Innovation"%>
                   <% if subscriber.botler_care? || subscriber.updates? || subscriber.special_deals? %>
@@ -72,12 +72,9 @@
 
         </tbody>
       </table>
-      <div class="container d-flex flex-column flex-md-row text-center justify-content-between p-0 pb-2">
+      <div class="container d-flex flex-column flex-md-row text-center justify-content-between p-0 pb-5 pt-2">
         <div class="news-subscribers"><%= page_entries_info @subscribers %></div>
         <div class="news-pages"><%= paginate @subscribers %></div>
-
-
-
       </div>
 
     </div>
