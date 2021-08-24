@@ -16,13 +16,17 @@
 
 <div>
   <h2>Newsletter Sign-up Data</h2>
+  <%= form_tag(subscribers_path, method: :get) do %>
+  <%= text_field_tag(:search, params[:search], placeholder: "Search for keywords") %>
+  <%= submit_tag ("Search") %>
+  <% end %>
   <table>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Email</th>
+        <th><%= sortable "first_name", "Name" %></th>
+        <th><%= sortable "email", "Email" %></th>
+        <th><%= sortable "created_at", "Sign-up Date" %></th>
         <th>Botler Interests</th>
-        <th>Sign-up Date</th>
       </tr>
     </thead>
 
@@ -31,6 +35,7 @@
         <tr>
           <td><%= subscriber.first_name %> <%= subscriber.last_name %></td>
           <td><%= subscriber.email  %></td>
+          <td><%= subscriber.created_at.strftime '%e/%m/%Y' %></td>
           <td>
             <% if subscriber.innovation? %>
               <%= "Innovation"%>
@@ -50,9 +55,14 @@
               <%= "Special Deals"  %>
             <% end %>
           </td>
-          <td><%= subscriber.created_at.strftime '%e/%m/%Y' %></td>
         </tr>
       <% end %>
+
     </tbody>
   </table>
+  <div>
+    <%= paginate @subscribers %>
+    <%= page_entries_info @subscribers %>
+  </div>
+
 </div>
