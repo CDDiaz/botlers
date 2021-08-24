@@ -1,10 +1,11 @@
-<div class="container text-center">
+<div class="container text-center mb-4">
+  <img class="news-logo" src="botlerlogo.png" alt="botler logo">
   <h1>Newsletter Analytics</h1>
 </div>
 
 <div class="container subscriber-bg">
-  <div class="container d-flex flex-column flex-md-row text-center justify-content-evenly p-4">
-    <div class="container-sm text-center border rounded m-3">
+  <div class="container d-flex flex-column flex-md-row text-center justify-content-evenly p-0 pt-4 pb-5">
+    <div class="container-sm border-test border text-center m-3">
       <h4>New Subscribers Yesterday</h4>
       <h3><%= @last_day_subs %></h3>
     </div>
@@ -71,9 +72,12 @@
 
         </tbody>
       </table>
-      <div>
-        <%= paginate @subscribers %>
-        <%= page_entries_info @subscribers %>
+      <div class="container d-flex flex-column flex-md-row text-center justify-content-between p-0 pb-2">
+        <div class="news-subscribers"><%= page_entries_info @subscribers %></div>
+        <div class="news-pages"><%= paginate @subscribers %></div>
+
+
+
       </div>
 
     </div>

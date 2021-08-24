@@ -90,6 +90,13 @@ table {
   background: #FFFFFF;
 }
 
+.border {
+  border-color: $primary-color2 !important;
+}
+.news-logo {
+  width: 102px;
+  height: 61px;
+}
 .subscriber-bg {
   background: $accent-color1;
   max-width: 1440px;
