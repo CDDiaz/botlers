@@ -97,6 +97,9 @@ strong {
   max-width: 1440px !important;
   background: $primary-color1;
 }
+.top-nav {
+  max-width: 1440px !important;
+}
 
 .nav-link {
   @include p1Desktop
